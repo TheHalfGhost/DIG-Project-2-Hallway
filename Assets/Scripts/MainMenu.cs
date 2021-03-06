@@ -10,6 +10,7 @@ public class MainMenu : MonoBehaviour
     public void Playgame()
     {
         SceneManager.LoadScene("Level 1");
+        PauseMenu.InGame = true;
     }
 
     public void Quitgame()
@@ -20,5 +21,12 @@ public class MainMenu : MonoBehaviour
     public void Menu()
     {
         SceneManager.LoadScene("MainMenu");
+        PauseMenu.InGame = false;
+        PauseMenu.isPaused = false;
+    }
+    void Update()
+    {
+        Cursor.lockState = CursorLockMode.None;
     }
 }
+
